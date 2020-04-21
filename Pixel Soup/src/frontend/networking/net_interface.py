@@ -45,9 +45,11 @@ class Pipe:
                 return False, "invalid"
 
         else:
+            # when room name is not found
             if response == b"Missing":
                 return False, "missing"
 
+            # when team is full
             elif response == b"Full":
                 return False, "full"
 
