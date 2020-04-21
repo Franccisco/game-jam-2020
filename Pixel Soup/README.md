@@ -16,6 +16,25 @@
 
 
 ### Installation
+1. Install pipenv. It can be installed via pip:
+
+```
+pip install --user pipenv
+```
+
+*With `--user`, pipenv will be installed locally*.
+
+Problems installing `pipenv`? Check the [installation instructions](https://pipenv.pypa.io/en/latest/install/#installing-pipenv) in the pipenv documentation.
+
+2. Clone this repository using `git clone https://github.com/python-discord/game-jam-2020.git`
+
+3. Open the `game-jam-2020` folder and navigate into the `Pixel Soup` directory.
+
+4. Inside `Pixel Soup`, open a terminal and run
+
+```
+pipenv install
+```
 
 ### Usage
 
