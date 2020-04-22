@@ -18,6 +18,7 @@ class GameView(arcade.View):
         # Character sprites
         self.robot_sprite = None
         self.female_sprite = None
+        self.male_sprite = None
 
     def on_show(self) -> None:
         arcade.set_background_color(arcade.color.WHITE)
@@ -45,6 +46,13 @@ class GameView(arcade.View):
         self.female_sprite.center_x = 0.2 * SCREEN_WIDTH
         self.female_sprite.center_y = OVER_FLOOR_POSITION
         self.player_list.append(self.female_sprite)
+
+        self.male_sprite = arcade.Sprite(
+            f"{characters_source}/male/male_idle.png", CHARACTER_SCALING
+        )
+        self.male_sprite.center_x = 0.3 * SCREEN_WIDTH
+        self.male_sprite.center_y = OVER_FLOOR_POSITION
+        self.player_list.append(self.male_sprite)
 
     def pause_game(self) -> None:
         """Switch to a Pause view."""
