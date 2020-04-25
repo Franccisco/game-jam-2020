@@ -78,6 +78,9 @@ if __name__ == "__main__":
         def setup(self):
 
             """ Set up the game and initialize the variables. """
+            import os
+
+            print(os.getcwd())
 
             self.background = arcade.load_texture("data/14.png")
 
@@ -201,7 +204,6 @@ if __name__ == "__main__":
             self.forward.put(())
             if not self.feedback.empty():
                 data = self.feedback.get()
-                print(data, "refined")
                 if data[0]:
                     for seg in data[1]:
                         print(f"wall position ...{seg[1]}")

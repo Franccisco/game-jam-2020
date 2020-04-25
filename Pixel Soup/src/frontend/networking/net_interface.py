@@ -68,12 +68,10 @@ class Pipe:
         game_data = [self.udp_password, self.username] + game_data
 
         game_data = (dumps(game_data)) + b"||||"
-        print(f"{len(game_data)} length of data")
 
         self.udp.sendto(game_data, (self.server, self.game_port))
 
-        data, _ = self.udp.recvfrom(100)
-        print(f"receiving {len(data)}")
+        data, _ = self.udp.recvfrom(1024)
         data = data.split(b"||||")
 
         if len(data) > 1:

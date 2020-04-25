@@ -161,7 +161,7 @@ def game_room(team_port: int, password: int, players: list) -> None:
                     )
                     pipe[data[1]] = []
                 else:
-                    udp.sendto(dumps([":server:", wall_pos]) + b"||||", address)
+                    udp.sendto(dumps([[":server:", wall_pos]]) + b"||||", address)
 
 
 if __name__ == "__main__":
