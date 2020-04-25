@@ -166,7 +166,8 @@ class GameView(arcade.View):
 
         changed = False
         if self.player_sprite.change_x and not self.player_sprite.change_y:
-            arcade.play_sound(self.footstep)
+
+            self.footstep.play()
 
         # Scroll left
         left_boundary = self.view_left + LEFT_VIEWPORT_MARGIN
