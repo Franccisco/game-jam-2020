@@ -1,14 +1,3 @@
-"""
-Sprite Explosion
-
-Simple program to show basic sprite usage.
-
-Artwork from http://kenney.nl
-Explosion graphics from http://www.explosiongenerator.com/
-
-If Python and Arcade are installed, this example can be run from the command line with:
-python -m arcade.examples.sprite_explosion
-"""
 import random
 import arcade
 import os
@@ -36,14 +25,12 @@ BULLET_SPEED = 30
 
 
 def networking(forward, feedback, udp):
-    print("networking interface running")
     while True:
         items_no = forward.qsize()
 
         for _ in range(items_no - 2):
             forward.get()
         data = list(forward.get())
-        print(data, "packet recieved")
         feedback.put(udp.transport(data))
 
 
@@ -77,6 +64,9 @@ if __name__ == "__main__":
             self.player_list = None
             self.wall_list = None
 
+            self.jet_sound = arcade.sound.load_sound(":resources:sounds/laser2.wav")
+            self.jet_gun = arcade.sound.load_sound(":resources:sounds/explosion2.wav")
+
             arcade.set_background_color(arcade.color.BLACK)
             self.background = None
             self.physics_engine = None
@@ -89,15 +79,15 @@ if __name__ == "__main__":
 
             """ Set up the game and initialize the variables. """
 
-            self.background = arcade.load_texture("14.png")
+            self.background = arcade.load_texture("data/14.png")
 
             # Sprite lists
             self.player_list = arcade.SpriteList()
 
             # jet sprites
-            self.player1 = arcade.Sprite("player1.png", SPRITE_SCALING_PLAYER)
-            self.player2 = arcade.Sprite("player2.png", SPRITE_SCALING_PLAYER)
-            self.player3 = arcade.Sprite("player3.png", SPRITE_SCALING_PLAYER)
+            self.player1 = arcade.Sprite("data/player1.png", SPRITE_SCALING_PLAYER)
+            self.player2 = arcade.Sprite("data/player2.png", SPRITE_SCALING_PLAYER)
+            self.player3 = arcade.Sprite("data/player3.png", SPRITE_SCALING_PLAYER)
             self.player1.center_x = 100
             self.player1.center_y = 100
 
@@ -111,7 +101,7 @@ if __name__ == "__main__":
             self.player_list.append(self.player2)
             self.player_list.append(self.player3)
 
-            build = Build(scale=0.1, image="11.png")
+            build = Build(scale=0.1, image="data/11.png")
             build.lay((0, 1000, 15), "x", 10)
             self.wall_list = build.submit()
 
@@ -140,7 +130,7 @@ if __name__ == "__main__":
             if pos:
                 pos = random.randint(10, 650)
 
-            wall = arcade.Sprite("11.png", 0.15)
+            wall = arcade.Sprite("data/11.png", 0.15)
             wall.position = (SCREEN_WIDTH, pos)
             wall.change_x = -5
             self.wall_list.append(wall)
@@ -210,9 +200,8 @@ if __name__ == "__main__":
         def stream(self):
             self.forward.put(())
             if not self.feedback.empty():
-                print("receiving..............")
                 data = self.feedback.get()
-                print(data)
+                print(data, "refined")
                 if data[0]:
                     for seg in data[1]:
                         print(f"wall position ...{seg[1]}")
@@ -274,7 +263,7 @@ if __name__ == "__main__":
             super().__init__()
 
             self.background = None
-            self.username = "David"
+            self.username = "Game"
 
         def on_draw(self) -> None:
             """Show the widgets."""
