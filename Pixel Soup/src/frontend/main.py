@@ -1,5 +1,4 @@
 import arcade
-import logging
 
 from .gameconstants import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE
 from .views.mainview import MainView
