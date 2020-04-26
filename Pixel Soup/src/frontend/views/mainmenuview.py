@@ -26,7 +26,7 @@ def networking(forward, feedback):
         if response[0] == "Team count":
             feedback.put(response[:2])
         elif response[0] == "Start":
-            feedback.put(["Start"])
+            feedback.put(["Start", response[1]])
             break
     while True:
         items_no = forward.qsize()
@@ -89,7 +89,6 @@ class MainMenuView(arcade.View):
                     logging.info("Cannot connect to server")
                     self.status = "Error in connection (Retrying)"
             else:
-                print(success, 7777777)
                 if success[0] == "Team count":
                     self.status = f"Waiting for other players... ({success[1]})"
                 elif success[0] == "Start":
@@ -99,4 +98,4 @@ class MainMenuView(arcade.View):
 
                     game_view = GameView()
                     self.window.show_view(game_view)
-                    game_view.setup(self.forward, self.feedback)
+                    game_view.setup(self.forward, self.feedback, success[1])

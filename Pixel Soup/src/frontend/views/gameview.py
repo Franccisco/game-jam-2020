@@ -114,7 +114,7 @@ class GameView(arcade.View):
         self.forward = Queue()
         self.feedback = Queue()
 
-    def setup(self, forward, feedback):
+    def setup(self, forward, feedback, character_id):
         """ Set up the game and initialize the variables. """
         self.background = arcade.load_texture(f"{DATA_DIR}/14.png")
 
@@ -236,10 +236,12 @@ class GameView(arcade.View):
         self.stream()
 
     def stream(self):
-        self.forward.put(())
+        self.forward.put(self.player1.position)
         if not self.feedback.empty():
             data = self.feedback.get()
             if data[0]:
-
-                for seg in data[1][0]:
-                    self.add_wall(pos=seg[1])
+                if data[1][0] == ":server:":
+                    self.add_wall(data[1][1])
+                else:
+                    self.player2.position = (data[1][0], data[1][1])
+                    self.add_wall(data[1][0])
