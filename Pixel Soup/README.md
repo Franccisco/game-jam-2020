@@ -8,9 +8,10 @@
 ## Navigation
 1. Description
 2. Installation
-3. Usage
-4. Sources
-5. License
+3. Running the game
+4. Usage
+5. Sources
+6. License
 
 ### Description
 
@@ -36,8 +37,16 @@ Problems installing `pipenv`? Check the [installation instructions](https://pipe
 pipenv install
 ```
 
-### Usage
+### Running the game
+Now that you installed the game, it's time to use it! In  the Pixel Soup directory, open a terminal (or use the one you opened when installed the game) and run
 
+```
+pipenv run start
+```
+
+**Important:** given the way that the `start` command works (loading the `main.py` file as a module), you **must** use it inside the Pixel Soup directory, otherwise the game will crash at startup.
+
+### Usage
 
 ### Sources
 
