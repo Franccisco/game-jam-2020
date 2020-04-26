@@ -33,9 +33,6 @@ class NewRoomButton(arcade.TextButton):
         if self.pressed:
             self.dialoguebox.active = True
 
-            game_view = GameView()
-            self.view_reference.window.show_view(game_view)
-            game_view.setup()
 
 class JoinRoomButton(arcade.TextButton):
     def __init__(
