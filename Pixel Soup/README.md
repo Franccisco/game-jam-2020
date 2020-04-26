@@ -55,4 +55,4 @@ pipenv run start
 ### Sources
 
 ### License
-This game is licensed by the MIT License. The details are located at `Pixel Soup/LICENSE.
+This game is licensed by the MIT License. The details are located at `Pixel Soup/LICENSE`.
