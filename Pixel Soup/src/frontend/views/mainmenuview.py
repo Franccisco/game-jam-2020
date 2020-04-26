@@ -30,8 +30,8 @@ class NewGameButton(arcade.TextButton):
             self.view_reference.clear_buttons()
 
             game_view = GameView()
-            game_view.setup()
             self.view_reference.window.show_view(game_view)
+            game_view.setup()
 
 
 class LoadGameButton(arcade.TextButton):
