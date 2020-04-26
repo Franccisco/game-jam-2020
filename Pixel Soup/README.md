@@ -1,4 +1,4 @@
-# Game Title
+# Trio Survivals
 
 ## Authors: Pixel Soup ([Franccisco](https://github.com/Franccisco), [davidoluwafemi](https://github.com/davidoluwafemi))
 
