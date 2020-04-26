@@ -14,7 +14,11 @@
 6. License
 
 ### Description
+One apocalypse, three different dimensions... wait, Three apocalypses then?
 
+Call it how you like. Time is running, save yourself before it's too late!
+
+This is a Parallel Escape game, where you and two more people will be playing together, but in different dimensions. That said, the outcome of the dimension you are will depend on your decisions.
 
 ### Installation
 1. Install pipenv. It can be installed via pip:
