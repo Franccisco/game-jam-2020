@@ -240,7 +240,6 @@ class GameView(arcade.View):
         if not self.feedback.empty():
             data = self.feedback.get()
             if data[0]:
-                print(data, 999999999999999999)
+
                 for seg in data[1][0]:
-                    print(f"wall position ...{seg[1]}")
                     self.add_wall(pos=seg[1])

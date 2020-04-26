@@ -46,9 +46,12 @@ class MainMenuView(arcade.View):
 
         self.background = None
         self.status = "Connecting to server..."
+
         self.connected = False
         self.forward = Queue()
         self.feedback = Queue()
+
+        self.start = arcade.load_sound(f"{DATA_PATH}/start.wav")
 
     def on_show(self) -> None:
         pass
@@ -92,6 +95,7 @@ class MainMenuView(arcade.View):
                 elif success[0] == "Start":
                     logging.info("Starting game")
                     self.status = "Launching game"
+                    self.start.play(volume=0.7)
 
                     game_view = GameView()
                     self.window.show_view(game_view)

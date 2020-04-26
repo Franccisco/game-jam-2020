@@ -12,7 +12,10 @@ DATA_PATH = f"{GAME_PATH}/data"
 class MainView(arcade.View):
     def __init__(self):
         super().__init__()
+
         self.background = None
+        self.music = arcade.load_sound(f"{DATA_PATH}/music.mp3")
+        self.music.play(0.3)
 
     def on_show(self) -> None:
         """Called when MainView should draw."""
