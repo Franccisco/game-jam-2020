@@ -51,6 +51,16 @@ pipenv run start
 **Important:** given the way that the `start` command works (loading the `main.py` file as a module), you **must** use it inside the Pixel Soup directory, otherwise the game will crash at startup.
 
 ### Usage
+Once you open the game, press any key and you'll be moved into a waiting room. If you're the first player joining, you'll be the host. The game will start automatically when three players are in the room.
+
+
+#### Key bindings
+
+| Key                | Action            |
+| ------------------ | ----------------- |
+| **W** or **Space** | Jump              |
+| **A** or **←**     | Move to the left  |
+| **D** or **→**     | Move to the right |
 
 ### Sources
 
